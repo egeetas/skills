@@ -1,0 +1,48 @@
+name: Bug report
+description: Report reproducible incorrect or unsafe skill behavior
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Please remove secrets and private repository content before submitting.
+  - type: input
+    id: skill
+    attributes:
+      label: Affected skill or component
+      placeholder: test-and-fix-loop, installer, validator, documentation...
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Include the prompt, relevant context, and exact steps.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and impact
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Codex surface and environment
+      placeholder: CLI or IDE, OS, repository scope, relevant version details
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: This report contains no secrets or private repository content.
+          required: true
+        - label: This is not an undisclosed security vulnerability.
+          required: true

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Repository Quality Audit"
+  short_description: "Audit repositories for reproducible quality risks"
+  default_prompt: "Use $repo-quality-audit to run repository checks, hunt reproducible defects, and prepare deduplicated findings or authorized issues."

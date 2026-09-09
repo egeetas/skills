@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Bootstrap"
+  short_description: "Bootstrap maintainable software repositories"
+  default_prompt: "Use $project-bootstrap to create a maintainable repository baseline with appropriate structure, tooling, CI, docs, and secure defaults."

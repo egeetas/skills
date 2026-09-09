@@ -6,6 +6,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+import tomllib
 from pathlib import Path
 
 
@@ -25,10 +26,14 @@ def main() -> int:
     errors: list[str] = []
     names: dict[str, Path] = {}
     case_ids: set[str] = set()
-    entrypoints = sorted(ROOT.glob("*/SKILL.md"))
+    entrypoints = sorted(ROOT.glob("skills/*/SKILL.md"))
 
     if not entrypoints:
-      errors.append("No top-level skill entrypoints found")
+        errors.append("No skill entrypoints found under skills/")
+
+    legacy_entrypoints = sorted(ROOT.glob("*/SKILL.md"))
+    for entrypoint in legacy_entrypoints:
+        errors.append(f"{entrypoint.relative_to(ROOT)}: move skill under skills/")
 
     for entrypoint in entrypoints:
         text = entrypoint.read_text(encoding="utf-8")
@@ -59,14 +64,44 @@ def main() -> int:
             errors.append(f"{entrypoint.relative_to(ROOT)}: unfinished placeholder")
 
         openai_yaml = entrypoint.parent / "agents" / "openai.yaml"
-        if openai_yaml.exists():
+        if not openai_yaml.exists():
+            errors.append(f"{openai_yaml.relative_to(ROOT)}: missing Codex interface metadata")
+        else:
             metadata = openai_yaml.read_text(encoding="utf-8")
+            display_name = scalar(metadata, "display_name")
             default_prompt = scalar(metadata, "default_prompt")
             short_description = scalar(metadata, "short_description")
-            if default_prompt and name and f"${name}" not in default_prompt:
+
+            if not display_name:
+                errors.append(f"{openai_yaml.relative_to(ROOT)}: missing display_name")
+            if not default_prompt:
+                errors.append(f"{openai_yaml.relative_to(ROOT)}: missing default_prompt")
+            elif name and f"${name}" not in default_prompt:
                 errors.append(f"{openai_yaml.relative_to(ROOT)}: default_prompt must mention ${name}")
-            if short_description and not 25 <= len(short_description) <= 64:
+            if not short_description:
+                errors.append(f"{openai_yaml.relative_to(ROOT)}: missing short_description")
+            elif not 25 <= len(short_description) <= 64:
                 errors.append(f"{openai_yaml.relative_to(ROOT)}: short_description must be 25-64 characters")
+
+    presets = sorted((ROOT / "agent-presets").glob("*.toml"))
+    if not presets:
+        errors.append("agent-presets/: no Codex subagent presets found")
+    for preset in presets:
+        try:
+            data = tomllib.loads(preset.read_text(encoding="utf-8"))
+        except (OSError, tomllib.TOMLDecodeError) as exc:
+            errors.append(f"{preset.relative_to(ROOT)}: invalid TOML: {exc}")
+            continue
+
+        if data.get("name") != preset.stem:
+            errors.append(f"{preset.relative_to(ROOT)}: name must match filename")
+        if not isinstance(data.get("description"), str) or len(data["description"].strip()) < 20:
+            errors.append(f"{preset.relative_to(ROOT)}: description is missing or too short")
+        instructions = data.get("developer_instructions")
+        if not isinstance(instructions, str) or len(instructions.strip()) < 80:
+            errors.append(f"{preset.relative_to(ROOT)}: developer_instructions are missing or too short")
+        if data.get("sandbox_mode") not in {"read-only", "workspace-write"}:
+            errors.append(f"{preset.relative_to(ROOT)}: unsupported sandbox_mode")
 
     template = ROOT / "templates" / "SKILL.md.template"
     if not template.exists():

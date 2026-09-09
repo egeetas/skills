@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Evaluation"
+  short_description: "Build reproducible AI evaluation suites"
+  default_prompt: "Use $ai-evaluation to design a representative, reproducible evaluation and define release gates."

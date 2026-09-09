@@ -1,0 +1,4 @@
+interface:
+  display_name: "Device Testing"
+  short_description: "Test mobile behavior across real conditions"
+  default_prompt: "Use $device-testing to plan and run representative mobile device, OS, lifecycle, network, and permission checks."

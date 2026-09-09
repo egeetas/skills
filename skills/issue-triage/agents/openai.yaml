@@ -1,0 +1,4 @@
+interface:
+  display_name: "Issue Triage"
+  short_description: "Triage issues by evidence, impact, and priority"
+  default_prompt: "Use $issue-triage to deduplicate and classify this report by evidence, severity, priority, ownership, and next action."

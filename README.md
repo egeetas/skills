@@ -1,16 +1,25 @@
 # Codex Software Engineering Skills
 
 [![Validate skills](https://github.com/egeetas/skills/actions/workflows/validate-skills.yml/badge.svg)](https://github.com/egeetas/skills/actions/workflows/validate-skills.yml)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Codex skills](https://img.shields.io/badge/Codex_skills-49-111827.svg)](#skill-kataloğu)
 
-Reusable, safety-conscious skills for planning, building, testing, reviewing, shipping, and operating software with Codex.
+49 production-minded, safety-conscious skills for planning, building, testing, reviewing, shipping, and operating software with Codex.
 
 [Türkçe](#türkçe) · [English](#english) · [Kurulum / Setup](SETUP.md)
 
 ## Türkçe
 
-Bu depo, Codex'in yazılım geliştirme görevlerinde tekrar kullanılabilir ve tutarlı iş akışları izlemesini sağlayan bağımsız skill paketleri içerir. Her klasörde zorunlu bir `SKILL.md` bulunur; bazı yeni paketlerde Codex arayüz bilgileri için `agents/openai.yaml` da vardır.
+Bu depo, Codex'in yazılım geliştirme görevlerinde tekrar kullanılabilir ve tutarlı iş akışları izlemesini sağlayan 49 bağımsız skill paketi içerir. Her skill `skills/<skill-name>/` altında zorunlu bir `SKILL.md` ve Codex arayüz bilgileri için `agents/openai.yaml` taşır.
 
 Skill'ler talebi genişletmez. Kod inceleme yalnızca raporlar, kullanıcı düzeltme istemedikçe değişiklik yapmaz. Commit, push, issue/PR yayınlama, release ve deployment gibi dış işlemler açık yetki gerektirir.
+
+### Neden bu koleksiyon?
+
+- **Gerçek geliştirme döngüsü:** Tekil prompt parçaları yerine discovery'den canary izlemeye kadar birbirini tamamlayan iş akışları.
+- **Dar ve öngörülebilir tetikleme:** Benzer skill'ler arasındaki sınırlar makine-okunur routing vakalarıyla korunur.
+- **Güvenli otomasyon:** Review, düzeltme ve dış sistem değişiklikleri arasındaki yetki sınırları açıkça belirtilir.
+- **Codex-native paketleme:** Tüm skill'lerde arayüz metadata'sı, doğrulayıcı, CI ve isteğe bağlı subagent preset'leri bulunur.
 
 ### Öne çıkan iş akışları
 
@@ -113,6 +122,12 @@ Yalnızca seçtiklerinizi kurmak için:
 ./scripts/install.sh product-strategy-review developer-experience-review context-handoff
 ```
 
+İsteğe bağlı `code-explorer`, `quality-reviewer` ve `test-investigator` subagent preset'lerini de kurmak için:
+
+```bash
+./scripts/install.sh --with-agents
+```
+
 Ayrıntılı kişisel ve repo-kapsamlı kurulum, güncelleme ve doğrulama adımları için [SETUP.md](SETUP.md) dosyasına bakın.
 
 ### Kullanım
@@ -130,9 +145,16 @@ Codex ayrıca görev bir skill'in `description` alanıyla eşleştiğinde onu ot
 
 ## English
 
-This repository provides focused, reusable Codex skills for a complete software-engineering lifecycle. Every skill is a self-contained directory with a required `SKILL.md`; selected skills also include `agents/openai.yaml` metadata for the Codex UI.
+This repository provides 49 focused, reusable Codex skills for a complete software-engineering lifecycle. Every skill lives under `skills/<skill-name>/` with a required `SKILL.md` and `agents/openai.yaml` metadata for the Codex UI.
 
 The collection preserves authorization boundaries. A review request reports findings without silently fixing them. Commits, pushes, issue/PR publication, releases, deployments, and other external mutations require explicit user authorization.
+
+### Why this collection?
+
+- **A complete engineering lifecycle:** Complementary workflows from product discovery through post-deploy canary monitoring.
+- **Predictable routing:** Machine-readable boundary cases distinguish easily confused skills.
+- **Safe automation:** Explicit boundaries separate review, implementation, and external mutations.
+- **Codex-native packaging:** Consistent UI metadata, validation, CI, and optional subagent presets.
 
 ### What is included
 
@@ -165,6 +187,12 @@ Install a selected subset:
 ./scripts/install.sh product-strategy-review developer-experience-review context-handoff
 ```
 
+Optionally install the `code-explorer`, `quality-reviewer`, and `test-investigator` subagent presets:
+
+```bash
+./scripts/install.sh --with-agents
+```
+
 See [SETUP.md](SETUP.md) for user-level and repository-level installation, updates, verification, and troubleshooting.
 
 ### Invoke a skill
@@ -180,6 +208,17 @@ $issue-to-pr-workflow implement issue 42 and prepare the pull request
 
 Codex may also select a skill implicitly when the task matches its `description`.
 
+### Repository layout
+
+```text
+skills/<skill-name>/       Portable Codex skills
+agent-presets/             Optional custom subagents
+templates/                 New-skill authoring template
+tests/                     Routing boundary contracts
+scripts/                   Installer and structural validator
+.github/                   CI and contribution templates
+```
+
 ## Development
 
 Validate every skill locally:
@@ -189,6 +228,8 @@ python3 scripts/validate_skills.py
 ```
 
 The same validation runs in GitHub Actions on pushes to `main` and on pull requests. New skills should start from [`templates/SKILL.md.template`](templates/SKILL.md.template). [`tests/skill-boundary-cases.json`](tests/skill-boundary-cases.json) keeps machine-readable routing contracts for easily confused skills; the validator checks their schema and references so a model-level evaluation can consume them without silent drift.
+
+Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) for scope, authoring rules, validation, and pull-request expectations.
 
 ## License and attribution
 

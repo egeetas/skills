@@ -1,0 +1,4 @@
+interface:
+  display_name: "Database Migrations"
+  short_description: "Plan safe, observable database migrations"
+  default_prompt: "Use $database-migrations to plan and verify a backward-compatible, observable migration with a rollback path."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Testing Standards"
+  short_description: "Design reliable tests with risk-based coverage"
+  default_prompt: "Use $testing-standards to design or review deterministic tests with risk-based coverage and disciplined test doubles."

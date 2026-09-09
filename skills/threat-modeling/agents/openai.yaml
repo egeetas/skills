@@ -1,0 +1,4 @@
+interface:
+  display_name: "Threat Modeling"
+  short_description: "Model threats, mitigations, and residual risk"
+  default_prompt: "Use $threat-modeling to map assets, actors, trust boundaries, attack paths, mitigations, assumptions, and residual risk."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architecture Decision"
+  short_description: "Document consequential architecture decisions"
+  default_prompt: "Use $architecture-decision to compare viable options and document the decision, trade-offs, migration, and rollback."

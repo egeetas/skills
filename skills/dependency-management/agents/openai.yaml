@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dependency Management"
+  short_description: "Audit dependencies and supply-chain risk"
+  default_prompt: "Use $dependency-management to evaluate this dependency change for necessity, compatibility, security, licensing, and rollback."

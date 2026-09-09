@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mobile Release"
+  short_description: "Prepare safe iOS and Android releases"
+  default_prompt: "Use $mobile-release to prepare this mobile release, including signing, store checks, rollout, monitoring, and rollback."

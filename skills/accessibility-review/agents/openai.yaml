@@ -1,0 +1,4 @@
+interface:
+  display_name: "Accessibility Review"
+  short_description: "Review accessible user experiences"
+  default_prompt: "Use $accessibility-review to evaluate this interface and report actionable accessibility improvements."

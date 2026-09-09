@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prompt Versioning"
+  short_description: "Version prompts with evaluations and rollback"
+  default_prompt: "Use $prompt-versioning to change this production prompt with fixtures, evaluation evidence, rollout controls, and rollback."

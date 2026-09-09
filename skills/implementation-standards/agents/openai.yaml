@@ -1,0 +1,4 @@
+interface:
+  display_name: "Implementation Standards"
+  short_description: "Implement maintainable production-quality code"
+  default_prompt: "Use $implementation-standards to implement this change with repository-aligned architecture, contracts, errors, and boundaries."

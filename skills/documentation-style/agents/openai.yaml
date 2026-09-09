@@ -1,0 +1,4 @@
+interface:
+  display_name: "Documentation Style"
+  short_description: "Write clear, consistent technical documentation"
+  default_prompt: "Use $documentation-style to create or revise this documentation with a consistent, task-oriented style."

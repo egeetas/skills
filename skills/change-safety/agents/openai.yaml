@@ -1,0 +1,4 @@
+interface:
+  display_name: "Change Safety"
+  short_description: "Make scoped changes with safe verification"
+  default_prompt: "Use $change-safety to implement this change while preserving existing behavior, user work, and rollback options."

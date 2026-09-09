@@ -1,0 +1,4 @@
+interface:
+  display_name: "Incident Response"
+  short_description: "Coordinate safe, evidence-led incident response"
+  default_prompt: "Use $incident-response to stabilize, diagnose, communicate, and verify recovery from this incident."

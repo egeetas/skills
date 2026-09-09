@@ -1,0 +1,4 @@
+interface:
+  display_name: "PR Preparation"
+  short_description: "Prepare focused, review-ready pull requests"
+  default_prompt: "Use $pr-preparation to prepare a focused pull request with verification evidence, risks, migration notes, and rollback guidance."

@@ -1,0 +1,38 @@
+name: Skill proposal
+description: Propose a focused new skill or a meaningful capability extension
+title: "[Skill]: "
+labels: ["enhancement"]
+body:
+  - type: input
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: What concrete job should Codex perform better?
+    validations:
+      required: true
+  - type: textarea
+    id: triggers
+    attributes:
+      label: Trigger examples
+      description: Give two or three realistic prompts that should select this skill.
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Non-triggers and neighboring skills
+      description: Explain when this skill should not activate and why existing skills are insufficient.
+    validations:
+      required: true
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Proposed workflow and evidence
+      description: Outline inputs, checks, outputs, and how success can be verified.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources and licensing
+      description: Link any source material and state its license.

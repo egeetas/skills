@@ -1,0 +1,4 @@
+interface:
+  display_name: "Observability Standards"
+  short_description: "Design useful logs, metrics, traces, and alerts"
+  default_prompt: "Use $observability-standards to design or review diagnostic logs, metrics, traces, health checks, dashboards, and alerts."

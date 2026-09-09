@@ -19,7 +19,18 @@ jobs:
           python-version: "3.12"
       - name: Validate Codex skill structure
         run: python3 scripts/validate_skills.py
-      - name: Test installer help and inventory
+      - name: Test installer behavior
         run: |
           bash scripts/install.sh --help
           bash scripts/install.sh --list
+          user_target="$(mktemp -d)"
+          bash scripts/install.sh --target "$user_target" code-review
+          test -L "$user_target/code-review"
+          legacy_target="$(mktemp -d)"
+          ln -s "$PWD/code-review" "$legacy_target/code-review"
+          bash scripts/install.sh --target "$legacy_target" code-review
+          test "$(readlink "$legacy_target/code-review")" = "$PWD/skills/code-review"
+          project_target="$(mktemp -d)"
+          bash scripts/install.sh --scope repo --target "$project_target" --with-agents code-review
+          test -f "$project_target/.agents/skills/code-review/SKILL.md"
+          test -f "$project_target/.codex/agents/code-explorer.toml"

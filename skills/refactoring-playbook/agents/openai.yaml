@@ -1,0 +1,4 @@
+interface:
+  display_name: "Refactoring Playbook"
+  short_description: "Refactor safely in behavior-preserving steps"
+  default_prompt: "Use $refactoring-playbook to plan and execute this refactor through small, verified, behavior-preserving checkpoints."

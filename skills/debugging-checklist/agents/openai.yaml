@@ -1,0 +1,4 @@
+interface:
+  display_name: "Debugging Checklist"
+  short_description: "Diagnose failures with systematic evidence"
+  default_prompt: "Use $debugging-checklist to reproduce, isolate, and identify the root cause of this failure."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Git Workflow"
+  short_description: "Apply safe, consistent Git workflows"
+  default_prompt: "Use $git-workflow to perform this Git task while preserving history, conventions, and unrelated work."

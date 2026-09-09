@@ -1,0 +1,4 @@
+interface:
+  display_name: "Visual Regression"
+  short_description: "Build deterministic visual regression coverage"
+  default_prompt: "Use $visual-regression to create or review stable visual coverage across meaningful states, viewports, themes, and variants."

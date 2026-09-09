@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Review"
+  short_description: "Find actionable defects in code changes"
+  default_prompt: "Use $code-review to inspect these changes for concrete correctness, security, performance, and test issues."

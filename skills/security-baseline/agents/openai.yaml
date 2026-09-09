@@ -1,0 +1,4 @@
+interface:
+  display_name: "Security Baseline"
+  short_description: "Review practical software security risks"
+  default_prompt: "Use $security-baseline to review trust boundaries, identity, input, secrets, data, dependencies, and deployment defaults."

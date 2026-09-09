@@ -1,0 +1,4 @@
+interface:
+  display_name: "Performance Investigation"
+  short_description: "Investigate performance with measurements"
+  default_prompt: "Use $performance-investigation to measure, profile, and isolate this performance problem before recommending changes."

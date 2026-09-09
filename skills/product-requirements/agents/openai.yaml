@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product Requirements"
+  short_description: "Turn product decisions into testable requirements"
+  default_prompt: "Use $product-requirements to turn the accepted feature direction into scope, acceptance criteria, non-goals, and open decisions."

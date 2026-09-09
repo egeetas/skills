@@ -1,0 +1,4 @@
+interface:
+  display_name: "Platform Guidelines"
+  short_description: "Review native mobile platform conventions"
+  default_prompt: "Use $platform-guidelines to review this mobile experience against current platform behavior and integration conventions."

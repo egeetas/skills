@@ -1,0 +1,4 @@
+interface:
+  display_name: "Model Safety"
+  short_description: "Review AI systems for misuse and unsafe behavior"
+  default_prompt: "Use $model-safety to review this AI feature for prompt injection, unsafe tool use, data exposure, and oversight gaps."

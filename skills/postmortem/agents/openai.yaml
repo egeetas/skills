@@ -1,0 +1,4 @@
+interface:
+  display_name: "Postmortem"
+  short_description: "Create evidence-based blameless postmortems"
+  default_prompt: "Use $postmortem to document verified impact, timeline, root cause, contributing factors, and owned follow-up actions."

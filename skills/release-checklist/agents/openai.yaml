@@ -1,0 +1,4 @@
+interface:
+  display_name: "Release Checklist"
+  short_description: "Prepare verified releases with rollback plans"
+  default_prompt: "Use $release-checklist to verify this release across versioning, artifacts, migrations, security, rollout, monitoring, and rollback."

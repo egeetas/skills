@@ -9,6 +9,8 @@ Codex skill'leri kullanıcı kapsamından veya belirli bir repository kapsamınd
 - Kullanıcı kapsamı: `$HOME/.agents/skills`
 - Repository kapsamı: `<repo>/.agents/skills`
 
+Skill kaynakları bu depoda `skills/<skill-name>/` altında tutulur. İsteğe bağlı custom subagent preset'leri kullanıcı için `$HOME/.codex/agents`, proje için `<repo>/.codex/agents` konumuna kurulur.
+
 ### Yöntem 1 — Codex skill-installer
 
 Codex'e şu isteği verin:
@@ -45,6 +47,14 @@ Yalnızca belirli skill'leri kurmak için:
 ./scripts/install.sh product-strategy-review developer-experience-review context-handoff
 ```
 
+Üç isteğe bağlı subagent preset'ini skill'lerle birlikte kurmak için:
+
+```bash
+./scripts/install.sh --with-agents
+```
+
+Preset'ler `code-explorer`, `quality-reviewer` ve `test-investigator` rolleridir. Installer mevcut agent tanımlarının üzerine yazmaz.
+
 Farklı bir kullanıcı skill klasörü seçmek için:
 
 ```bash
@@ -68,6 +78,8 @@ Seçili kurulum:
 ./scripts/install.sh --scope repo --target /absolute/path/to/project \
   code-review testing-standards test-and-fix-loop
 ```
+
+Projeye skill'lerle birlikte subagent preset'lerini de kopyalamak için komuta `--with-agents` ekleyin. Bunlar `<proje>/.codex/agents` altına yerleştirilir.
 
 Repository kapsamı kopyalama kullandığı için güncellemeler otomatik gelmez; yeni sürümü kontrollü bir diff ile tekrar taşıyın.
 
@@ -107,6 +119,8 @@ Codex discovers skills from user and repository scopes:
 - User scope: `$HOME/.agents/skills`
 - Repository scope: `<repo>/.agents/skills`
 
+Skill sources live under `skills/<skill-name>/` in this repository. Optional custom subagent presets install to `$HOME/.codex/agents` for user scope or `<repo>/.codex/agents` for project scope.
+
 ### Option 1 — Codex skill-installer
 
 Ask Codex:
@@ -138,6 +152,14 @@ List or install selected skills:
 ./scripts/install.sh product-strategy-review developer-experience-review context-handoff
 ```
 
+Install the three optional subagent presets alongside the skills:
+
+```bash
+./scripts/install.sh --with-agents
+```
+
+The presets are `code-explorer`, `quality-reviewer`, and `test-investigator`. The installer never overwrites an existing agent definition.
+
 Use a custom user destination:
 
 ```bash
@@ -161,6 +183,8 @@ Copy a selected set:
 ./scripts/install.sh --scope repo --target /absolute/path/to/project \
   code-review testing-standards test-and-fix-loop
 ```
+
+Add `--with-agents` to copy the presets into `<project>/.codex/agents` as part of a repository-scoped installation.
 
 Repository scope uses copies so the skills can be committed with the target project. Updates are not automatic; review and copy future versions as an explicit diff.
 
@@ -192,3 +216,5 @@ User-level symlinks immediately expose the successfully pulled version.
 - For repository skills, start Codex within a directory whose path to the repository root includes `.agents/skills`.
 
 Official documentation: <https://developers.openai.com/codex/skills>
+
+Custom subagent documentation: <https://developers.openai.com/codex/subagents>
