@@ -1,6 +1,6 @@
 ---
 name: changelog-generator
-description: Generate factual, audience-appropriate changelog entries or release notes from an explicit git commit, tag, date, or pull-request range. Do not use when no verifiable change range or source material is available.
+description: Generate factual changelogs or release notes from an explicit git, tag, date, or pull-request range. Requires verifiable source material.
 ---
 
 # Changelog Generator
@@ -10,6 +10,8 @@ Turn verified repository changes into release communication without inventing im
 ## Resolve the Range
 
 Determine the repository, base and head revision or exact date range, target version, audience, and desired format. Confirm ambiguous ranges before producing a release artifact. Inspect tags, commits, pull requests when available, and the actual diff for claims that commit subjects alone cannot support.
+
+For a git revision range, prefer `scripts/collect_git_range.py --base <ref> --head <ref>` to collect commit, file, and diff-stat evidence before drafting.
 
 Follow an existing changelog style, release template, and versioning policy. Treat issue and PR text as context to verify against code, not automatically true release notes.
 

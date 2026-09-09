@@ -1,6 +1,6 @@
 ---
 name: change-safety
-description: Make scoped code changes while preserving user work, existing behavior, compatibility, and a clear verification and rollback path.
+description: Plan or execute a risky scoped change where preserving user work, compatibility, verification, or rollback is the primary concern.
 ---
 
 # Change Safety

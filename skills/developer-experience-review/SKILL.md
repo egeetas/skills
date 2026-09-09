@@ -1,6 +1,6 @@
 ---
 name: developer-experience-review
-description: Plan or test the developer experience of an API, CLI, SDK, library, platform, or technical documentation by tracing real personas, onboarding, time-to-first-success, errors, ergonomics, upgrades, and evidence-backed friction. Do not use for end-user UX that has no developer-facing workflow.
+description: Plan or test developer experience for an API, CLI, SDK, library, platform, or technical docs. Do not use for non-developer UX.
 ---
 
 # Developer Experience Review

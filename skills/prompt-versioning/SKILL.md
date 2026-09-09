@@ -1,6 +1,6 @@
 ---
 name: prompt-versioning
-description: Change and version production prompts with clear contracts, fixtures, evaluation evidence, compatibility checks, rollout controls, and rollback.
+description: Change and version production prompts with contracts, fixtures, evaluation evidence, compatibility checks, rollout controls, and rollback.
 ---
 
 # Prompt Versioning

@@ -1,6 +1,6 @@
 ---
 name: design-exploration
-description: Explore several genuinely distinct visual directions for a web or app interface, compare them against product and design-system constraints, collect structured feedback, and hand an approved direction to implementation. Do not use when the user already chose a direction and only wants it built.
+description: Explore and compare distinct visual directions before implementation. Do not use when the direction is already chosen and only needs building.
 ---
 
 # Design Exploration

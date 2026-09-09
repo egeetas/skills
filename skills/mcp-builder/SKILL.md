@@ -1,6 +1,6 @@
 ---
 name: mcp-builder
-description: Design, implement, test, or review a Model Context Protocol server that exposes external APIs, data, or workflows as safe and discoverable tools, resources, or prompts. Use for MCP-specific work, not ordinary application APIs.
+description: Design, implement, test, or review an MCP server exposing external APIs, data, or workflows as safe, discoverable capabilities.
 license: Apache-2.0; see ../LICENSES/Apache-2.0.txt and ../THIRD_PARTY_NOTICES.md
 ---
 

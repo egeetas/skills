@@ -2,3 +2,5 @@ interface:
   display_name: "Software Development Workflow"
   short_description: "Coordinate software work from idea to release"
   default_prompt: "Use $software-development-workflow to coordinate this task through the necessary planning, implementation, verification, review, and release stages."
+policy:
+  allow_implicit_invocation: false

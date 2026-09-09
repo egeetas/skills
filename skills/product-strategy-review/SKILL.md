@@ -1,6 +1,6 @@
 ---
 name: product-strategy-review
-description: Challenge an early product or feature idea before requirements or implementation by testing demand evidence, the status quo, target users, critical premises, the narrowest valuable wedge, and materially different alternatives. Do not use when scope is already accepted and the user only wants implementation.
+description: Challenge an unvalidated product idea using demand evidence, target users, assumptions, alternatives, and the smallest valuable wedge. Do not use after scope is accepted.
 ---
 
 # Product Strategy Review

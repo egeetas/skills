@@ -1,6 +1,6 @@
 ---
 name: platform-guidelines
-description: Design and review native mobile behavior against current platform conventions, lifecycle, navigation, permissions, accessibility, and system integration.
+description: Design or review native mobile behavior against current platform conventions, lifecycle, navigation, permissions, accessibility, and system integration.
 ---
 
 # Platform Guidelines

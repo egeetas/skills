@@ -1,6 +1,6 @@
 ---
 name: frontend-quality
-description: Build and review resilient front-end experiences across responsive layout, interaction states, performance, accessibility, browser behavior, and visual consistency.
+description: Build or review resilient frontend behavior across responsive layout, interaction states, performance, accessibility, browsers, and visual consistency.
 ---
 
 # Front-end Quality

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/egeetas/skills/schemas/eval-case.schema.json",
+  "title": "AI evaluation case",
+  "type": "object",
+  "required": ["id", "input", "graders", "tags"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "input": {},
+    "expected": {},
+    "graders": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "tags": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "source": {"type": "string"},
+    "sensitive": {"type": "boolean", "default": false}
+  },
+  "additionalProperties": false
+}

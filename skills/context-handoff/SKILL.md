@@ -1,6 +1,6 @@
 ---
 name: context-handoff
-description: Save, list, or restore a sanitized engineering work checkpoint across Codex sessions, branches, or worktrees, including goals, decisions, repository state, verification, failed approaches, and remaining work. Do not use for ordinary final summaries or as a substitute for commits.
+description: Save, list, or restore a sanitized engineering checkpoint across sessions, branches, or worktrees. Not project memory or a commit substitute.
 ---
 
 # Context Handoff

@@ -1,6 +1,6 @@
 ---
 name: webapp-testing
-description: Test a local or preview web application through a real browser when user flows, rendered state, accessibility behavior, console errors, network failures, screenshots, or responsive layouts must be verified. Do not use for unit-test-only requests.
+description: Test a local or preview web app in a real browser for user flows, rendered state, accessibility, console or network errors, and responsive layouts.
 license: Apache-2.0; see ../LICENSES/Apache-2.0.txt and ../THIRD_PARTY_NOTICES.md
 ---
 

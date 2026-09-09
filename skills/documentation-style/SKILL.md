@@ -1,6 +1,6 @@
 ---
 name: documentation-style
-description: Create or revise README files, API documentation, changelogs, code comments, and operational guides in a consistent task-oriented style.
+description: Create or revise README files, API docs, changelogs, code comments, and operational guides in a consistent task-oriented style.
 ---
 
 # Documentation Style

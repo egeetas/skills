@@ -1,6 +1,6 @@
 ---
 name: pr-preparation
-description: Prepare a reviewable pull request with scoped commits, self-review, verification evidence, risk notes, screenshots, migration details, and rollback guidance.
+description: Prepare a reviewable pull request with scoped commits, self-review, verification evidence, risks, screenshots, migrations, and rollback guidance.
 ---
 
 # Pull Request Preparation

@@ -1,6 +1,6 @@
 ---
 name: mobile-release
-description: Prepare iOS or Android releases with signing, versioning, store metadata, privacy, staged rollout, device checks, monitoring, and rollback planning.
+description: Prepare iOS or Android releases with signing, versioning, store metadata, privacy, staged rollout, device checks, monitoring, and rollback.
 ---
 
 # Mobile Release

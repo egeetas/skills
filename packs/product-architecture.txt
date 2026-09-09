@@ -1,0 +1,8 @@
+# Validate an idea and turn it into sound product and architecture decisions.
+product-strategy-review
+product-requirements
+codebase-mapping
+architecture-decision
+api-design
+developer-experience-review
+project-bootstrap

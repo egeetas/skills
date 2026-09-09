@@ -1,6 +1,6 @@
 ---
 name: model-safety
-description: Review AI features for misuse, prompt injection, unsafe tool use, data exposure, unreliable outputs, human oversight, and operational safety controls.
+description: Review AI features for misuse, prompt injection, unsafe tool use, data exposure, unreliable outputs, oversight, and operational controls.
 ---
 
 # Model Safety

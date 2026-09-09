@@ -6,8 +6,16 @@ usage() {
 Install this repository's skills for Codex.
 
 Usage:
-  ./scripts/install.sh [--scope user|repo] [--target PATH] [--with-agents] [skill ...]
+  ./scripts/install.sh [--scope user|repo] [--target PATH] [--with-agents]
+                       [--pack NAME ...] [--all] [skill ...]
   ./scripts/install.sh --list
+  ./scripts/install.sh --list-packs
+
+Selection:
+  No selection   Install the core-development pack.
+  --pack NAME    Install a named pack; repeatable and combinable with skill names.
+  --all          Install every skill; cannot be combined with packs or skill names.
+  skill          Install an individual skill by name.
 
 Scopes:
   user  Symlink skills into $HOME/.agents/skills (default).
@@ -15,11 +23,15 @@ Scopes:
 
 Options:
   --with-agents  Also install the optional Codex subagent presets.
+  --list         List available skills and exit.
+  --list-packs   List packs and their skills, then exit.
 
 Examples:
   ./scripts/install.sh
+  ./scripts/install.sh --pack frontend-mobile --pack security-operations
   ./scripts/install.sh frontend-design test-and-fix-loop
-  ./scripts/install.sh --scope repo --target /path/to/project --with-agents
+  ./scripts/install.sh --all --with-agents
+  ./scripts/install.sh --scope repo --target /path/to/project --pack core-development
 
 Existing destinations are never overwritten.
 USAGE
@@ -30,8 +42,22 @@ repo_root="$(cd "$script_dir/.." && pwd)"
 scope="user"
 target=""
 list_only="false"
+list_packs_only="false"
 with_agents="false"
+install_all="false"
 requested=()
+requested_packs=()
+
+append_unique() {
+  local candidate="$1"
+  local present
+  if [[ ${#requested[@]} -gt 0 ]]; then
+    for present in "${requested[@]}"; do
+      [[ "$present" == "$candidate" ]] && return 0
+    done
+  fi
+  requested+=("$candidate")
+}
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -45,8 +71,21 @@ while [[ $# -gt 0 ]]; do
       target="$2"
       shift 2
       ;;
+    --pack)
+      [[ $# -ge 2 ]] || { echo "Missing value for --pack" >&2; exit 2; }
+      requested_packs+=("$2")
+      shift 2
+      ;;
+    --all)
+      install_all="true"
+      shift
+      ;;
     --list)
       list_only="true"
+      shift
+      ;;
+    --list-packs)
+      list_packs_only="true"
       shift
       ;;
     --with-agents)
@@ -63,7 +102,7 @@ while [[ $# -gt 0 ]]; do
       exit 2
       ;;
     *)
-      requested+=("$1")
+      append_unique "$1"
       shift
       ;;
   esac
@@ -80,8 +119,39 @@ if [[ "$list_only" == "true" ]]; then
   exit 0
 fi
 
-if [[ ${#requested[@]} -eq 0 ]]; then
+if [[ "$list_packs_only" == "true" ]]; then
+  for pack_file in "$repo_root"/packs/*.txt; do
+    [[ -f "$pack_file" ]] || continue
+    pack_name="$(basename "$pack_file" .txt)"
+    printf '%s:' "$pack_name"
+    while IFS= read -r skill || [[ -n "$skill" ]]; do
+      [[ -z "$skill" || "$skill" == \#* ]] && continue
+      printf ' %s' "$skill"
+    done < "$pack_file"
+    printf '\n'
+  done
+  exit 0
+fi
+
+if [[ "$install_all" == "true" && (${#requested[@]} -gt 0 || ${#requested_packs[@]} -gt 0) ]]; then
+  echo "--all cannot be combined with --pack or individual skill names" >&2
+  exit 2
+fi
+
+if [[ "$install_all" == "true" ]]; then
   requested=("${available[@]}")
+else
+  if [[ ${#requested[@]} -eq 0 && ${#requested_packs[@]} -eq 0 ]]; then
+    requested_packs=("core-development")
+  fi
+  for pack_name in "${requested_packs[@]}"; do
+    pack_file="$repo_root/packs/$pack_name.txt"
+    [[ -f "$pack_file" ]] || { echo "Unknown pack: $pack_name" >&2; exit 2; }
+    while IFS= read -r skill || [[ -n "$skill" ]]; do
+      [[ -z "$skill" || "$skill" == \#* ]] && continue
+      append_unique "$skill"
+    done < "$pack_file"
+  done
 fi
 
 case "$scope" in

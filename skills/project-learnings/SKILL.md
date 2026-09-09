@@ -1,6 +1,6 @@
 ---
 name: project-learnings
-description: Capture, search, review, prune, or export durable project-specific engineering learnings with evidence, confidence, freshness, and contradiction handling. Do not use as a transcript, task tracker, or store for secrets and temporary status.
+description: Capture, search, review, prune, or export durable project learnings with evidence, confidence, freshness, and contradiction handling. Not for temporary task state.
 ---
 
 # Project Learnings

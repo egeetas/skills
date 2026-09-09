@@ -18,11 +18,15 @@ jobs:
         with:
           python-version: "3.12"
       - name: Validate Codex skill structure
-        run: python3 scripts/validate_skills.py
+        run: |
+          python3 scripts/validate_skills.py
+          python3 -m py_compile scripts/*.py skills/*/scripts/*.py
+          python3 -m unittest discover -s tests -p 'test_*.py'
       - name: Test installer behavior
         run: |
           bash scripts/install.sh --help
           bash scripts/install.sh --list
+          bash scripts/install.sh --list-packs
           user_target="$(mktemp -d)"
           bash scripts/install.sh --target "$user_target" code-review
           test -L "$user_target/code-review"
@@ -34,3 +38,12 @@ jobs:
           bash scripts/install.sh --scope repo --target "$project_target" --with-agents code-review
           test -f "$project_target/.agents/skills/code-review/SKILL.md"
           test -f "$project_target/.codex/agents/code-explorer.toml"
+          default_target="$(mktemp -d)"
+          bash scripts/install.sh --target "$default_target"
+          test "$(find "$default_target" -mindepth 1 -maxdepth 1 -type l | wc -l | tr -d ' ')" = "17"
+          pack_target="$(mktemp -d)"
+          bash scripts/install.sh --target "$pack_target" --pack frontend-mobile
+          test "$(find "$pack_target" -mindepth 1 -maxdepth 1 -type l | wc -l | tr -d ' ')" = "9"
+          all_target="$(mktemp -d)"
+          bash scripts/install.sh --target "$all_target" --all
+          test "$(find "$all_target" -mindepth 1 -maxdepth 1 -type l | wc -l | tr -d ' ')" = "49"

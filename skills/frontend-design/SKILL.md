@@ -1,6 +1,6 @@
 ---
 name: frontend-design
-description: Design and implement distinctive web interfaces when visual direction, typography, layout, motion, responsive behavior, or UI copy materially affect the result. Do not use for backend-only work or a narrow style fix with an established design system.
+description: Design and implement a chosen web interface where visual direction, typography, layout, motion, or UI copy materially matters.
 license: Apache-2.0; see ../LICENSES/Apache-2.0.txt and ../THIRD_PARTY_NOTICES.md
 ---
 

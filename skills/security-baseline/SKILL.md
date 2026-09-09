@@ -1,6 +1,6 @@
 ---
 name: security-baseline
-description: Review software changes and designs for practical security risks across trust boundaries, identity, input, secrets, data, dependencies, and deployment defaults.
+description: Review designs or changes for practical security risks across trust boundaries, identity, input, secrets, data, dependencies, and deployment defaults.
 ---
 
 # Security Baseline

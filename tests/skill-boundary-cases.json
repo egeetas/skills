@@ -66,6 +66,24 @@
       "prompt": "Run the same support-agent evaluation across the configured models and compare quality, latency, variance, and cost.",
       "expected": ["ai-evaluation"],
       "excluded": ["performance-investigation"]
+    },
+    {
+      "id": "no-engineering-skill",
+      "prompt": "Translate this short paragraph from English to Turkish without changing its tone.",
+      "expected": [],
+      "excluded": ["software-development-workflow", "documentation-style"]
+    },
+    {
+      "id": "review-accessibility-composition",
+      "prompt": "Review this pull request specifically for accessibility regressions and report findings without changing code.",
+      "expected": ["code-review", "accessibility-review"],
+      "excluded": ["software-development-workflow", "test-and-fix-loop"]
+    },
+    {
+      "id": "focused-task-not-orchestrator",
+      "prompt": "The product decision is accepted; write testable requirements and non-goals for this one feature.",
+      "expected": ["product-requirements"],
+      "excluded": ["software-development-workflow", "product-strategy-review"]
     }
   ]
 }

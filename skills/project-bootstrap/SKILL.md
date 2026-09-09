@@ -1,6 +1,6 @@
 ---
 name: project-bootstrap
-description: Bootstrap a maintainable software repository with an appropriate structure, tooling, CI baseline, documentation, and secure defaults.
+description: Bootstrap a maintainable software repository with appropriate structure, tooling, CI, documentation, and secure defaults.
 ---
 
 # Project Bootstrap

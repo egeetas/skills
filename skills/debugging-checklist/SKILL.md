@@ -1,6 +1,6 @@
 ---
 name: debugging-checklist
-description: Diagnose reproducible software failures systematically using evidence, controlled hypotheses, isolation, root-cause analysis, and regression verification.
+description: Diagnose reproducible software failures through evidence, controlled hypotheses, isolation, root-cause analysis, and regression verification.
 ---
 
 # Debugging Checklist

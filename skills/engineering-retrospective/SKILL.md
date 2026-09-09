@@ -1,6 +1,6 @@
 ---
 name: engineering-retrospective
-description: Produce an evidence-based engineering retrospective for a repository or delivery period using git, pull-request, test, incident, and workflow signals to identify trends and concrete improvements. Do not use for incident root-cause analysis or individual productivity ranking.
+description: Produce an evidence-based engineering retrospective from delivery, test, review, incident, and workflow signals. Do not rank individuals or replace a postmortem.
 ---
 
 # Engineering Retrospective

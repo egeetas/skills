@@ -1,6 +1,6 @@
 ---
 name: release-checklist
-description: Prepare and verify software releases with versioning, changelog, artifacts, migrations, security, smoke tests, rollout, and rollback checks.
+description: Prepare and verify general software releases across versioning, artifacts, migrations, security, smoke tests, rollout, and rollback. Use mobile-release for app stores.
 ---
 
 # Release Checklist

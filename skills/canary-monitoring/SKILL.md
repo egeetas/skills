@@ -1,6 +1,6 @@
 ---
 name: canary-monitoring
-description: Monitor a newly deployed web release against a pre-deploy baseline for persistent page failures, new console or network errors, performance regressions, and visual anomalies, then produce evidence-backed health or rollback guidance. Do not use to deploy or mutate production.
+description: Monitor a new web release against a baseline for persistent failures, errors, performance regressions, and visual anomalies. Do not deploy.
 ---
 
 # Canary Monitoring

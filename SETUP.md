@@ -1,220 +1,77 @@
-# Codex Skill Setup / Codex Skill Kurulumu
+# Setup
 
-[Türkçe](#türkçe) · [English](#english)
+[Türkçe](SETUP.tr.md)
 
-## Türkçe
+The installer requires Bash. Repository validation and helper scripts require Python 3.11 or newer.
 
-Codex skill'leri kullanıcı kapsamından veya belirli bir repository kapsamından yükler:
+## Install as a Codex plugin
 
-- Kullanıcı kapsamı: `$HOME/.agents/skills`
-- Repository kapsamı: `<repo>/.agents/skills`
+The repository contains the portable `plugin.json`, compatibility `.codex-plugin/plugin.json`, and marketplace metadata expected by current Codex plugin tooling.
 
-Skill kaynakları bu depoda `skills/<skill-name>/` altında tutulur. İsteğe bağlı custom subagent preset'leri kullanıcı için `$HOME/.codex/agents`, proje için `<repo>/.codex/agents` konumuna kurulur.
-
-### Yöntem 1 — Codex skill-installer
-
-Codex'e şu isteği verin:
-
-```text
-Use $skill-installer to install skills from https://github.com/egeetas/skills
+```bash
+codex plugin marketplace add egeetas/skills --ref v1.0.0
+codex plugin add codex-engineering-skills@egeetas-skills
 ```
 
-Belirli skill'ler için isimleri isteğe ekleyin:
+Restart Codex if the newly installed skills do not appear. Use `/skills` or type `$` to open the skill selector.
 
-```text
-Use $skill-installer to install product-strategy-review, developer-experience-review, and context-handoff from https://github.com/egeetas/skills
-```
+## Install with the repository script
 
-### Yöntem 2 — Kişisel kurulum
-
-Bu yöntem depoyu kalıcı bir klasöre klonlar ve skill klasörlerini resmi kullanıcı konumuna symlink eder. Böylece `git pull` sonrasında skill'ler ayrıca kopyalanmadan güncellenir.
+Clone into a stable location:
 
 ```bash
 git clone https://github.com/egeetas/skills.git "$HOME/.local/share/egeetas-skills"
 cd "$HOME/.local/share/egeetas-skills"
+```
+
+The default command symlinks the 17-skill `core-development` pack into `$HOME/.agents/skills`:
+
+```bash
 ./scripts/install.sh
 ```
 
-Mevcut skill listesini görmek için:
+Discover and choose content:
 
 ```bash
 ./scripts/install.sh --list
+./scripts/install.sh --list-packs
+./scripts/install.sh --pack frontend-mobile --pack security-operations
+./scripts/install.sh product-strategy-review codebase-mapping
+./scripts/install.sh --all
 ```
 
-Yalnızca belirli skill'leri kurmak için:
+Add the optional `code-explorer`, `quality-reviewer`, and `test-investigator` presets under `$HOME/.codex/agents`:
 
 ```bash
-./scripts/install.sh product-strategy-review developer-experience-review context-handoff
+./scripts/install.sh --all --with-agents
 ```
 
-Üç isteğe bağlı subagent preset'ini skill'lerle birlikte kurmak için:
+The installer never overwrites an existing file, directory, or unrelated symlink.
+
+## Repository-scoped installation
+
+Copy selected content into a project's `.agents/skills` directory:
 
 ```bash
-./scripts/install.sh --with-agents
+./scripts/install.sh --scope repo --target /absolute/path/to/project --pack core-development
 ```
 
-Preset'ler `code-explorer`, `quality-reviewer` ve `test-investigator` rolleridir. Installer mevcut agent tanımlarının üzerine yazmaz.
+Add `--with-agents` to copy presets into `<project>/.codex/agents`. Repository scope uses copies, so future upstream changes are not automatic; review them as an explicit diff.
 
-Farklı bir kullanıcı skill klasörü seçmek için:
-
-```bash
-./scripts/install.sh --target /absolute/path/to/skills
-```
-
-Kurulum script'i var olan dosya veya symlink'lerin üzerine yazmaz; çakışmaları raporlayarak durur.
-
-### Yöntem 3 — Repository kapsamlı kurulum
-
-Bir projeyle birlikte versiyonlanacak skill'leri `<proje>/.agents/skills` altına kopyalayın:
-
-```bash
-cd "$HOME/.local/share/egeetas-skills"
-./scripts/install.sh --scope repo --target /absolute/path/to/project
-```
-
-Seçili kurulum:
-
-```bash
-./scripts/install.sh --scope repo --target /absolute/path/to/project \
-  code-review testing-standards test-and-fix-loop
-```
-
-Projeye skill'lerle birlikte subagent preset'lerini de kopyalamak için komuta `--with-agents` ekleyin. Bunlar `<proje>/.codex/agents` altına yerleştirilir.
-
-Repository kapsamı kopyalama kullandığı için güncellemeler otomatik gelmez; yeni sürümü kontrollü bir diff ile tekrar taşıyın.
-
-### Doğrulama
-
-Codex CLI veya IDE extension içinde:
-
-1. `/skills` komutunu çalıştırın veya `$` yazarak skill seçiciyi açın.
-2. Örneğin `$product-strategy-review`, `$context-handoff` veya `$test-and-fix-loop` çağırın.
-3. Yeni skill görünmezse Codex'i yeniden başlatın.
-
-Depo yapısını doğrulamak için:
-
-```bash
-python3 scripts/validate_skills.py
-```
-
-### Güncelleme
+## Update and verify
 
 ```bash
 git -C "$HOME/.local/share/egeetas-skills" pull --ff-only
 python3 "$HOME/.local/share/egeetas-skills/scripts/validate_skills.py"
 ```
 
-Kişisel kurulum symlink kullandığı için başarılı pull sonrasında yeni içerik doğrudan kullanılabilir.
+User-level symlinks expose the updated checkout immediately. The installer deliberately does not update existing repository copies. Compare the source and destination, move or remove only the reviewed skill directories you intend to replace, then run the same install command again.
 
-### Sorun giderme
+## Troubleshooting
 
-- Aynı `name` değerine sahip iki skill varsa Codex bunları birleştirmez; ikisi de listede görünebilir. Eski veya çakışan kopyayı kaldırın.
-- Script bir hedefi üzerine yazmaz. Önce mevcut skill'i inceleyin; gerçekten kaldırmak istiyorsanız yalnızca doğruladığınız symlink veya klasörü hedefleyin.
-- Repository içinden Codex başlatırken, `.agents/skills` klasörünün çalışma dizini ile repo kökü arasındaki yol üzerinde olduğundan emin olun.
+- Duplicate skill names are not merged. Remove or disable stale copies.
+- A conflict means the installer deliberately preserved an existing destination.
+- Start Codex within a repository path that includes its `.agents/skills` directory.
+- Run `python3 scripts/validate_skills.py` to distinguish malformed metadata from discovery problems.
 
-## English
-
-Codex discovers skills from user and repository scopes:
-
-- User scope: `$HOME/.agents/skills`
-- Repository scope: `<repo>/.agents/skills`
-
-Skill sources live under `skills/<skill-name>/` in this repository. Optional custom subagent presets install to `$HOME/.codex/agents` for user scope or `<repo>/.codex/agents` for project scope.
-
-### Option 1 — Codex skill-installer
-
-Ask Codex:
-
-```text
-Use $skill-installer to install skills from https://github.com/egeetas/skills
-```
-
-For a subset:
-
-```text
-Use $skill-installer to install product-strategy-review, developer-experience-review, and context-handoff from https://github.com/egeetas/skills
-```
-
-### Option 2 — User-level installation
-
-Clone the repository into a stable location and symlink its skill directories into the official user scope:
-
-```bash
-git clone https://github.com/egeetas/skills.git "$HOME/.local/share/egeetas-skills"
-cd "$HOME/.local/share/egeetas-skills"
-./scripts/install.sh
-```
-
-List or install selected skills:
-
-```bash
-./scripts/install.sh --list
-./scripts/install.sh product-strategy-review developer-experience-review context-handoff
-```
-
-Install the three optional subagent presets alongside the skills:
-
-```bash
-./scripts/install.sh --with-agents
-```
-
-The presets are `code-explorer`, `quality-reviewer`, and `test-investigator`. The installer never overwrites an existing agent definition.
-
-Use a custom user destination:
-
-```bash
-./scripts/install.sh --target /absolute/path/to/skills
-```
-
-The installer never overwrites an existing file, directory, or different symlink.
-
-### Option 3 — Repository-scoped installation
-
-Copy all skills into a project's `.agents/skills` directory:
-
-```bash
-cd "$HOME/.local/share/egeetas-skills"
-./scripts/install.sh --scope repo --target /absolute/path/to/project
-```
-
-Copy a selected set:
-
-```bash
-./scripts/install.sh --scope repo --target /absolute/path/to/project \
-  code-review testing-standards test-and-fix-loop
-```
-
-Add `--with-agents` to copy the presets into `<project>/.codex/agents` as part of a repository-scoped installation.
-
-Repository scope uses copies so the skills can be committed with the target project. Updates are not automatic; review and copy future versions as an explicit diff.
-
-### Verify
-
-1. Run `/skills` in Codex CLI or the IDE extension, or type `$` to open the skill selector.
-2. Invoke a skill such as `$product-strategy-review`, `$context-handoff`, or `$test-and-fix-loop`.
-3. Restart Codex if a newly installed skill does not appear.
-
-Validate this repository:
-
-```bash
-python3 scripts/validate_skills.py
-```
-
-### Update
-
-```bash
-git -C "$HOME/.local/share/egeetas-skills" pull --ff-only
-python3 "$HOME/.local/share/egeetas-skills/scripts/validate_skills.py"
-```
-
-User-level symlinks immediately expose the successfully pulled version.
-
-### Troubleshooting
-
-- Codex does not merge duplicate skill names. Remove or disable stale duplicate copies.
-- The installer refuses to overwrite conflicts. Inspect the existing destination before removing anything.
-- For repository skills, start Codex within a directory whose path to the repository root includes `.agents/skills`.
-
-Official documentation: <https://developers.openai.com/codex/skills>
-
-Custom subagent documentation: <https://developers.openai.com/codex/subagents>
+Official documentation: [Codex skills](https://developers.openai.com/codex/skills) · [Codex plugins](https://developers.openai.com/codex/plugins/build)

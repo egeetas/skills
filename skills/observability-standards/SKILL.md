@@ -1,6 +1,6 @@
 ---
 name: observability-standards
-description: Design and review logs, metrics, traces, health checks, dashboards, and alerts that make software behavior and failures diagnosable.
+description: Design or review logs, metrics, traces, health checks, dashboards, and alerts that make failures diagnosable.
 ---
 
 # Observability Standards
