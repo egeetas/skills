@@ -1,6 +1,6 @@
 ---
 name: technical-doc-coauthoring
-description: Coauthor a substantial technical specification, RFC, ADR, proposal, runbook, or engineering guide through context gathering, iterative drafting, and reader validation. Do not use for a small README edit or routine code comment.
+description: Coauthor substantial technical specs, RFCs, ADRs, proposals, runbooks, or engineering guides through context gathering, drafting, and reader validation.
 ---
 
 # Technical Document Coauthoring
@@ -15,7 +15,7 @@ Separate verified facts, decisions, proposals, assumptions, and open questions. 
 
 ## Structure and Draft
 
-Propose a compact structure suited to the document rather than forcing one template on every task. For each consequential section:
+Propose a compact structure suited to the document rather than forcing one template on every task. For an RFC without an established repository format, start from [the RFC template](assets/rfc-template.md). For each consequential section:
 
 1. identify what a reader must learn or decide;
 2. surface missing evidence and meaningful alternatives;
@@ -29,6 +29,6 @@ For technical decisions, cover rejected alternatives, compatibility, security, f
 
 For a substantial or high-impact document, use one or more fresh subagents when available to test it without conversation context. Give each only the document and a realistic reader question or review role. Check whether they can identify the decision, prerequisites, workflows, risks, and next actions; also ask for ambiguities, contradictions, and unstated assumptions.
 
-Validate and deduplicate their observations before revising. If subagents are unavailable, provide a short reader-test checklist the user can run in a fresh Codex task.
+Validate and deduplicate their observations before revising. Use [the reader-test rubric](references/reader-test-rubric.md) to keep reviews comparable. If subagents are unavailable, provide the checklist for the user to run in a fresh Codex task.
 
 Finish with a full coherence pass and verify factual claims, links, code examples, commands, terminology, and document-specific formatting. Report unresolved questions and validation limits.

@@ -1,6 +1,6 @@
 ---
 name: software-development-workflow
-description: Coordinate a software task from requirements and design through implementation, tests, audit, review, documentation, and release preparation using the relevant specialized skills.
+description: Coordinate substantial software work through the necessary requirements, design, implementation, testing, review, documentation, and release stages.
 ---
 
 # Software Development Workflow

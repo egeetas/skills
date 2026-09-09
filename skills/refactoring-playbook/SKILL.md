@@ -1,6 +1,6 @@
 ---
 name: refactoring-playbook
-description: Refactor existing code in behavior-preserving checkpoints with characterization tests, small transformations, compatibility, and measurable completion criteria.
+description: Refactor existing code through behavior-preserving checkpoints, characterization tests, small transformations, compatibility, and measurable completion.
 ---
 
 # Refactoring Playbook

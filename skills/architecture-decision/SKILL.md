@@ -1,6 +1,6 @@
 ---
 name: architecture-decision
-description: Evaluate and document consequential software architecture choices, alternatives, trade-offs, migration paths, and operational consequences.
+description: Evaluate architecture choices and document alternatives, trade-offs, migration, operations, and rollback.
 ---
 
 # Architecture Decision
@@ -20,4 +20,4 @@ Prefer the least complex option that satisfies current evidence. Do not invent p
 
 ## ADR Output
 
-Return: context, decision, alternatives considered, rationale, consequences, migration/rollback, and follow-ups. Mark the decision as proposed or accepted based on the user's authority.
+Return: context, decision, alternatives considered, rationale, consequences, migration/rollback, and follow-ups. Mark the decision as proposed or accepted based on the user's authority. Use [the ADR template](assets/adr-template.md) when the repository has no required format.

@@ -1,6 +1,6 @@
 ---
 name: git-workflow
-description: Apply consistent branch, commit, staging, rebase, merge, and push conventions while preserving history and unrelated work.
+description: Apply safe branch, commit, staging, rebase, merge, and push conventions while preserving history and unrelated work.
 ---
 
 # Git Workflow

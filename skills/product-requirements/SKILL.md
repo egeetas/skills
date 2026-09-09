@@ -1,6 +1,6 @@
 ---
 name: product-requirements
-description: Turn a software idea or feature request into scoped requirements, acceptance criteria, non-goals, edge cases, dependencies, and open decisions.
+description: Turn an accepted product idea into scoped requirements, acceptance criteria, non-goals, edge cases, dependencies, and open decisions.
 ---
 
 # Product Requirements
@@ -18,4 +18,4 @@ Use this skill before implementation when desired behavior, scope, or success cr
 
 Do not invent business policy or silently resolve material ambiguity. State assumptions and ask only questions whose answers change scope or behavior.
 
-Return a concise specification that engineering and review can test against.
+Return a concise specification that engineering and review can test against. Use [the PRD template](assets/prd-template.md) when the project has no established template.

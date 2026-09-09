@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "codex-engineering-skills",
+  "version": "1.0.0",
+  "description": "A curated engineering workflow library for Codex, from product discovery through production operations.",
+  "author": {
+    "name": "egeetas",
+    "url": "https://github.com/egeetas"
+  },
+  "homepage": "https://github.com/egeetas/skills",
+  "repository": "https://github.com/egeetas/skills",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "skills",
+    "software-engineering",
+    "developer-tools"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Codex Engineering Skills",
+        "shortDescription": "Engineering workflows from idea to release",
+        "longDescription": "Forty-nine focused Codex skills for product discovery, architecture, implementation, testing, review, frontend and mobile quality, security, operations, AI systems, and technical documentation.",
+        "developerName": "egeetas",
+        "category": "Developer Tools",
+        "capabilities": [
+          "software-engineering",
+          "code-quality",
+          "documentation"
+        ],
+        "websiteURL": "https://github.com/egeetas/skills",
+        "defaultPrompt": [
+          "Choose the smallest relevant engineering skill for the task, follow its workflow, and verify the result."
+        ]
+      }
+    }
+  }
+}

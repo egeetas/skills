@@ -1,6 +1,6 @@
 ---
 name: codebase-mapping
-description: Map an unfamiliar repository's architecture, entrypoints, modules, data and control flows, persistence, integrations, ownership, and change hotspots before planning consequential work. Use for architecture discovery, not a simple file lookup.
+description: Map an unfamiliar repository's architecture, entrypoints, flows, persistence, integrations, ownership, and change hotspots before consequential work.
 ---
 
 # Codebase Mapping

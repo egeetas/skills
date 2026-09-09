@@ -11,12 +11,14 @@ Participation is governed by [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
    authorization boundary.
 3. Keep one skill focused on one coherent job. Prefer composing existing skills
    over building a catch-all prompt.
-4. Start new skills from `templates/SKILL.md.template` and place them in
-   `skills/<skill-name>/`.
+4. Read `docs/skill-authoring.md`, start from `templates/SKILL.md.template`, and
+   place the skill in `skills/<skill-name>/`.
 5. Add `agents/openai.yaml` with a specific display name, a 25–64 character short
    description, and a default prompt that explicitly mentions `$skill-name`.
-6. Add or update a routing case in `tests/skill-boundary-cases.json` when the new
-   behavior could be confused with another skill.
+6. Add two positive and one negative case to `tests/skill-routing-cases.json`.
+   Add a focused `tests/skill-boundary-cases.json` case when behavior could be
+   confused with another skill.
+7. Add the skill to exactly one file under `packs/` and to `CATALOG.md`.
 
 ## Quality and safety rules
 
@@ -32,9 +34,13 @@ Participation is governed by [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ## Validate locally
 
+Validation and helper scripts require Python 3.11 or newer.
+
 ```bash
 python3 scripts/validate_skills.py
 bash scripts/install.sh --list
+python3 -m unittest discover -s tests -p 'test_*.py'
+python3 scripts/run_routing_evals.py --dry-run
 ```
 
 If you changed the installer, also test it against temporary user and repository

@@ -1,0 +1,18 @@
+# Default pack: implementation, quality, collaboration, and delivery.
+implementation-standards
+change-safety
+refactoring-playbook
+dependency-management
+testing-standards
+debugging-checklist
+test-and-fix-loop
+code-review
+repo-quality-audit
+issue-triage
+issue-to-pr-workflow
+git-workflow
+pr-preparation
+release-checklist
+canary-monitoring
+changelog-generator
+software-development-workflow

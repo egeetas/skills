@@ -1,6 +1,6 @@
 ---
 name: issue-triage
-description: Triage software bug and feature reports into deduplicated, evidence-backed severity, priority, ownership, reproduction, and next-action decisions.
+description: Triage bug and feature reports into deduplicated, evidence-backed severity, priority, ownership, reproduction, and next actions.
 ---
 
 # Issue Triage

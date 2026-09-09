@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: Review pull requests, diffs, or code changes for correctness, regressions, security, performance, maintainability, and missing tests.
+description: Review code changes for correctness, regression, security, performance, maintainability, and test defects. Report rather than fix by default.
 ---
 
 # Code Review

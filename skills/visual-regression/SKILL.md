@@ -1,6 +1,6 @@
 ---
 name: visual-regression
-description: Create, update, and review deterministic visual regression coverage for meaningful UI states, viewports, themes, and component variants.
+description: Create, update, or review deterministic visual regression coverage for meaningful UI states, viewports, themes, and component variants.
 ---
 
 # Visual Regression

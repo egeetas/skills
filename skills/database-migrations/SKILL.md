@@ -1,6 +1,6 @@
 ---
 name: database-migrations
-description: Design and verify safe schema and data migrations with compatibility, batching, observability, rollback, and zero-downtime considerations.
+description: Design and verify safe schema or data migrations with compatibility, batching, observability, rollback, and zero-downtime considerations.
 ---
 
 # Database Migrations

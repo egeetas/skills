@@ -1,6 +1,6 @@
 ---
 name: api-design
-description: Design and review stable HTTP, RPC, event, or library APIs with explicit contracts, errors, authorization, idempotency, pagination, compatibility, and evolution.
+description: Design or review stable APIs with explicit contracts, errors, authorization, idempotency, pagination, compatibility, and evolution.
 ---
 
 # API Design

@@ -1,6 +1,6 @@
 ---
 name: repo-quality-audit
-description: Audit a repository by running its checks, hunting reproducible correctness and security bugs, coordinating independent subagents, and drafting or opening deduplicated issues when authorized.
+description: Audit a repository by running checks, finding reproducible correctness or security bugs, coordinating bounded subagents, and drafting authorized issues.
 ---
 
 # Repository Quality Audit
@@ -10,7 +10,7 @@ Audit and report by default. Do not modify code unless the user requests fixes.
 ## Establish the Baseline
 
 1. Read repository instructions and inspect architecture, status, recent changes, CI, and existing issue conventions.
-2. Discover documented install, format, lint, type-check, test, build, and security commands. Do not invent expensive or destructive commands.
+2. Discover documented install, format, lint, type-check, test, build, and security commands. `scripts/discover_repo_checks.py <repo>` can identify common declared checks without running them. Do not invent expensive or destructive commands.
 3. Run checks from narrow to broad and preserve actionable failure evidence.
 
 ## Parallel Audit
@@ -27,4 +27,4 @@ Give each agent distinct scope and require evidence, reproduction, severity, con
 
 Keep a finding only when it has a plausible trigger, observable impact, concrete evidence, and a reproduction or clear code path. Separate confirmed bugs from risks and unverified hypotheses.
 
-Before creating an issue, search open and closed issues for duplicates and follow [the issue quality gate](references/issue-quality-gate.md). Draft issues unless the user explicitly authorizes publication. Never open multiple speculative issues from one root cause.
+Before creating an issue, search open and closed issues for duplicates and follow [the issue quality gate](references/issue-quality-gate.md). Structure results with [the audit report schema](references/audit-report-schema.md). Draft issues unless the user explicitly authorizes publication. Never open multiple speculative issues from one root cause.

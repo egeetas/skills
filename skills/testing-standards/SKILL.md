@@ -1,6 +1,6 @@
 ---
 name: testing-standards
-description: Design, implement, and review deterministic unit, integration, contract, and end-to-end tests with risk-based coverage and disciplined test doubles.
+description: Design, implement, or review deterministic unit, integration, contract, and end-to-end tests with risk-based coverage and disciplined doubles.
 ---
 
 # Testing Standards

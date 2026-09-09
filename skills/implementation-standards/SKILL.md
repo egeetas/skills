@@ -1,6 +1,6 @@
 ---
 name: implementation-standards
-description: Implement production-quality code that follows repository architecture, language idioms, explicit contracts, reliable error handling, and maintainable boundaries.
+description: Implement maintainable production code aligned with repository architecture, language idioms, contracts, error handling, and boundaries.
 ---
 
 # Implementation Standards

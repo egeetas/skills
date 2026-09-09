@@ -1,6 +1,6 @@
 ---
 name: test-and-fix-loop
-description: Run a repository's relevant formatter, lint, type-check, unit, integration, end-to-end, and build checks; diagnose confirmed failures; and implement fixes when requested. Do not use when the user asks only for a diagnostic report without changes.
+description: Run relevant repository checks, diagnose confirmed failures, and implement verified fixes. Do not use for diagnostic-only requests.
 ---
 
 # Test and Fix Loop

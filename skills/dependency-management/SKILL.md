@@ -1,6 +1,6 @@
 ---
 name: dependency-management
-description: Evaluate, add, remove, upgrade, or audit software dependencies for necessity, compatibility, vulnerabilities, licensing, reproducibility, unused packages, supply-chain risk, and safe rollback paths.
+description: Evaluate, add, remove, upgrade, or audit dependencies for necessity, compatibility, vulnerabilities, licensing, reproducibility, and supply-chain risk.
 ---
 
 # Dependency Management

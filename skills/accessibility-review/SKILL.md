@@ -1,6 +1,6 @@
 ---
 name: accessibility-review
-description: Review and improve web or app accessibility across semantics, keyboard navigation, focus, names, contrast, motion, forms, and assistive technology behavior.
+description: Review web or app accessibility across semantics, keyboard use, focus, names, contrast, motion, forms, and assistive technology behavior.
 ---
 
 # Accessibility Review

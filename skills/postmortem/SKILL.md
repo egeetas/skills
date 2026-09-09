@@ -1,6 +1,6 @@
 ---
 name: postmortem
-description: Produce a blameless incident postmortem with verified impact, timeline, root cause, contributing factors, detection and response gaps, and owned actions.
+description: Produce a blameless incident postmortem with verified impact, timeline, root cause, contributing factors, response gaps, and owned actions.
 ---
 
 # Postmortem
@@ -16,4 +16,4 @@ Use after an incident is stable. Base the document on logs, timelines, changes, 
 - What worked, what slowed response, and where defenses failed or were absent.
 - Corrective actions across prevention, detection, containment, recovery, documentation, and rehearsal.
 
-Actions must have an owner, priority, measurable completion condition, and target date when the organization provides them. Avoid blame, vague commitments, and unsupported counterfactuals. Publishing or communicating the postmortem requires explicit authorization.
+Actions must have an owner, priority, measurable completion condition, and target date when the organization provides them. Avoid blame, vague commitments, and unsupported counterfactuals. Use [the postmortem template](assets/postmortem-template.md) when no organizational template exists. Publishing or communicating the postmortem requires explicit authorization.

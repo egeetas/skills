@@ -1,6 +1,6 @@
 ---
 name: performance-investigation
-description: Investigate latency, throughput, memory, CPU, I/O, bundle-size, or scalability problems through measurement, profiling, experiments, and regression benchmarks.
+description: Investigate latency, throughput, memory, CPU, I/O, bundle size, or scalability using measurement, profiling, experiments, and benchmarks.
 ---
 
 # Performance Investigation

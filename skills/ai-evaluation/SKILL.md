@@ -1,6 +1,6 @@
 ---
 name: ai-evaluation
-description: Build representative, reproducible evaluations for AI features using explicit tasks, datasets, graders, baselines, slices, and release gates.
+description: Build reproducible evaluations for AI features using representative tasks, datasets, graders, baselines, slices, and release gates.
 ---
 
 # AI Evaluation
@@ -15,6 +15,8 @@ Use for model, prompt, retrieval, agent, or tool-workflow quality decisions. Do 
 - Use deterministic graders for objective properties and calibrated rubrics or pairwise review for judgment-heavy quality.
 - Track aggregate scores and important slices; preserve raw examples for error analysis.
 - Compare against a frozen baseline and repeat stochastic runs enough to understand variance.
+
+Use [the evaluation-case schema](assets/eval-case.schema.json) for portable fixtures and [the grader rubric checklist](references/grader-rubric.md) for judgment-heavy dimensions when the project has no established format.
 
 Report dataset/version, configuration, grader limits, scores, confidence/variance, regressions, cost/latency, and release recommendation. Add confirmed failures to the regression set.
 

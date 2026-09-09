@@ -1,6 +1,6 @@
 ---
 name: issue-to-pr-workflow
-description: Carry an accepted software issue from triage through implementation, regression tests, review, and pull-request preparation or publication. Use when the user asks to fix an issue or deliver issue-backed work; do not activate merely to inspect or triage an issue.
+description: Deliver an accepted software issue through implementation, regression tests, review, and pull-request preparation or publication. Do not use for triage alone.
 ---
 
 # Issue to Pull Request Workflow

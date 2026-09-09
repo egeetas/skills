@@ -1,6 +1,6 @@
 ---
 name: device-testing
-description: Plan and execute mobile testing across representative devices, OS versions, lifecycle transitions, networks, permissions, upgrades, and hardware constraints.
+description: Plan and run mobile tests across representative devices, OS versions, lifecycle transitions, networks, permissions, upgrades, and hardware constraints.
 ---
 
 # Device Testing

@@ -1,0 +1,21 @@
+{
+  "name": "egeetas-skills",
+  "interface": {
+    "displayName": "Egeetas Skills"
+  },
+  "plugins": [
+    {
+      "name": "codex-engineering-skills",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/egeetas/skills.git",
+        "ref": "v1.0.0"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
