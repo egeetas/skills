@@ -1,0 +1,4 @@
+interface:
+  display_name: "Changelog Generator"
+  short_description: "Create factual release notes from git history"
+  default_prompt: "Use $changelog-generator to create release notes for this exact revision range."

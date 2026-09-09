@@ -1,0 +1,4 @@
+interface:
+  display_name: "Webapp Testing"
+  short_description: "Verify web flows in a real browser"
+  default_prompt: "Use $webapp-testing to verify this web flow and report reproducible evidence."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Issue to PR Workflow"
+  short_description: "Turn an accepted issue into a verified PR"
+  default_prompt: "Use $issue-to-pr-workflow to implement this issue, verify the fix, and prepare the pull request."

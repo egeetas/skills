@@ -1,0 +1,4 @@
+interface:
+  display_name: "Technical Doc Coauthoring"
+  short_description: "Draft and reader-test technical documents"
+  default_prompt: "Use $technical-doc-coauthoring to turn this context into a clear, reader-tested technical document."

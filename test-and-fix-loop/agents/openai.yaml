@@ -1,0 +1,4 @@
+interface:
+  display_name: "Test and Fix Loop"
+  short_description: "Run checks, diagnose failures, and verify fixes"
+  default_prompt: "Use $test-and-fix-loop to run the relevant checks, fix confirmed failures, and verify the result."

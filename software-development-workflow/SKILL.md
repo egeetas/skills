@@ -12,12 +12,16 @@ Use this as an orchestrator for substantial end-to-end software work. Do not loa
 - Unclear feature or product behavior: use `product-requirements`.
 - Consequential design choice: use `architecture-decision` and, for sensitive systems, `threat-modeling`.
 - Existing-code changes: apply `implementation-standards` and `change-safety`.
+- Unfamiliar or consequential change surface: use `codebase-mapping` before planning implementation.
 - Dependency or persisted-data changes: use `dependency-management` or `database-migrations`.
-- Tests and bug fixes: use `testing-standards` and `debugging-checklist` as appropriate.
+- Tests and bug fixes: use `testing-standards`, `debugging-checklist`, and `test-and-fix-loop` as appropriate.
 - Broad verification: use `repo-quality-audit`; use subagents only for independent, bounded lanes.
 - Review: use `code-review` and `security-baseline` in proportion to risk.
-- User-facing or operational changes: update with `documentation-style` and `observability-standards` where relevant.
-- Delivery: prepare with `git-workflow`, `pr-preparation`, and `release-checklist`.
+- Frontend implementation or browser verification: use `frontend-design`, `frontend-quality`, `accessibility-review`, `visual-regression`, or `webapp-testing` only for the lanes needed.
+- MCP server work: use `mcp-builder`.
+- Substantial specs, RFCs, ADRs, or runbooks: use `technical-doc-coauthoring`; apply `documentation-style` to the final form.
+- User-facing or operational changes: update documentation and observability where relevant; use `changelog-generator` for release communication.
+- Issue-backed delivery: use `issue-to-pr-workflow`; otherwise prepare with `git-workflow`, `pr-preparation`, and `release-checklist`.
 
 ## Execution Gates
 

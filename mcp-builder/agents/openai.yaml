@@ -1,0 +1,4 @@
+interface:
+  display_name: "MCP Builder"
+  short_description: "Build safe, discoverable MCP servers"
+  default_prompt: "Use $mcp-builder to design and verify an MCP server for this integration."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codebase Mapping"
+  short_description: "Map architecture, flows, and change surfaces"
+  default_prompt: "Use $codebase-mapping to map this repository and identify the relevant change surface."
