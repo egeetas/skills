@@ -1,0 +1,4 @@
+interface:
+  display_name: "Developer Experience Review"
+  short_description: "Plan and test developer onboarding with evidence"
+  default_prompt: "Use $developer-experience-review to audit this developer-facing onboarding flow and produce an evidence-backed scorecard."

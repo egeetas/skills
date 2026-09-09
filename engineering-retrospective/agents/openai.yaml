@@ -1,0 +1,4 @@
+interface:
+  display_name: "Engineering Retrospective"
+  short_description: "Turn delivery evidence into system improvements"
+  default_prompt: "Use $engineering-retrospective to review the last delivery period and recommend evidence-backed improvements."

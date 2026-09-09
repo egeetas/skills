@@ -1,0 +1,4 @@
+interface:
+  display_name: "Context Handoff"
+  short_description: "Save and restore safe engineering checkpoints"
+  default_prompt: "Use $context-handoff to save the current engineering context so another Codex session can resume safely."

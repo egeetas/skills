@@ -20,15 +20,19 @@ Skill'ler talebi genişletmez. Kod inceleme yalnızca raporlar, kullanıcı düz
 - **Repo kalite denetimi:** `repo-quality-audit` testleri çalıştırır, kanıtlanabilir bug/güvenlik sorunları arar, bağımsız subagent kanalları kullanabilir ve izin verildiğinde deduplikasyonlu issue açabilir.
 - **Frontend kalitesi:** `frontend-design`, `frontend-quality`, `accessibility-review`, `visual-regression` ve `webapp-testing` tasarım kararından gerçek tarayıcı doğrulamasına kadar birbirini tamamlar.
 - **Teknik dokümanlar:** `technical-doc-coauthoring` RFC/ADR/spec/runbook üretir ve önemli dokümanları taze subagent'larla okuyucu gözüyle test eder.
+- **Ürün ve DX doğrulaması:** `product-strategy-review` yanlış ürünü inşa etme riskini azaltır; `developer-experience-review` geliştirici onboarding'ini planlar ve gerçek akışla test eder.
+- **Süreklilik ve öğrenme:** `context-handoff`, `project-learnings` ve `engineering-retrospective` oturum durumunu, kalıcı proje bilgisini ve dönemsel iyileştirmeyi birbirinden ayırır.
 
 ### Skill kataloğu
 
 #### Planlama ve mimari
 
+- `product-strategy-review` — talep kanıtı, mevcut çözüm, kritik varsayımlar, alternatifler ve en dar değerli başlangıç.
 - `product-requirements` — kapsam, kabul kriterleri, kapsam dışı maddeler ve edge case'ler.
 - `codebase-mapping` — entrypoint, modül, veri akışı, entegrasyon ve değişiklik yüzeyi haritası.
 - `architecture-decision` — alternatifler, trade-off'lar, ADR, geçiş ve rollback.
 - `api-design` — tutarlı ve evrilebilir API sözleşmeleri.
+- `developer-experience-review` — API/CLI/SDK onboarding planı, gerçek TTHW testi ve kanıtlı sürtünme scorecard'ı.
 - `project-bootstrap` — yeni projeler için doğrulanabilir başlangıç yapısı.
 
 #### Uygulama, test ve teslim
@@ -47,10 +51,12 @@ Skill'ler talebi genişletmez. Kod inceleme yalnızca raporlar, kullanıcı düz
 - `git-workflow` — branch, commit, staging, rebase/merge ve push güvenliği.
 - `pr-preparation` — incelemeye hazır PR gövdesi, kanıt, risk ve rollback.
 - `release-checklist` — versiyon, artifact, rollout, izleme ve rollback.
+- `canary-monitoring` — deploy sonrasında baseline'a göre kalıcı web regresyonlarını izleme.
 - `changelog-generator` — doğrulanmış git aralığından kullanıcı odaklı release note.
 
 #### Frontend ve mobil
 
+- `design-exploration` — uygulamadan önce gerçekten farklı görsel yönler üretme ve karşılaştırma.
 - `frontend-design` — ürüne özgü görsel yön, tipografi, layout, motion ve UI metni.
 - `frontend-quality` — responsive davranış, semantik yapı ve kullanıcı durumları.
 - `webapp-testing` — gerçek tarayıcıda flow, console/network, erişilebilirlik ve viewport testi.
@@ -70,10 +76,16 @@ Skill'ler talebi genişletmez. Kod inceleme yalnızca raporlar, kullanıcı düz
 - `incident-response` — güvenli müdahale, azaltım ve iletişim.
 - `postmortem` — suçlamasız, kanıta dayalı olay analizi.
 
+#### Proje hafızası ve iyileştirme
+
+- `project-learnings` — kanıt, güven ve güncellik bilgili kalıcı proje öğrenimleri.
+- `context-handoff` — oturum, branch ve worktree arasında güvenli çalışma checkpoint'i.
+- `engineering-retrospective` — teslimat, test, review ve operasyon sinyallerinden dönemsel sistem iyileştirmesi.
+
 #### AI, MCP ve dokümantasyon
 
 - `mcp-builder` — güvenli, keşfedilebilir ve test edilmiş MCP sunucuları.
-- `ai-evaluation` — model/agent davranışı için tekrarlanabilir eval.
+- `ai-evaluation` — model/agent davranışı için tekrarlanabilir eval ve kontrollü cross-model benchmark.
 - `prompt-versioning` — prompt değişiklikleri, sürümleme ve regresyon kontrolü.
 - `model-safety` — model çıktısı, tool use ve kötüye kullanım sınırları.
 - `documentation-style` — README, API dokümanı, yorum ve changelog stili.
@@ -98,7 +110,7 @@ cd "$HOME/.local/share/egeetas-skills"
 Yalnızca seçtiklerinizi kurmak için:
 
 ```bash
-./scripts/install.sh frontend-design webapp-testing test-and-fix-loop
+./scripts/install.sh product-strategy-review developer-experience-review context-handoff
 ```
 
 Ayrıntılı kişisel ve repo-kapsamlı kurulum, güncelleme ve doğrulama adımları için [SETUP.md](SETUP.md) dosyasına bakın.
@@ -109,6 +121,7 @@ Codex CLI veya IDE içinde `/skills` ile keşfedin ya da skill'i açıkça çağ
 
 ```text
 $codebase-mapping bu repoda ödeme akışını ve değişiklik yüzeyini çıkar
+$product-strategy-review bu ürün fikrinin talep kanıtını ve kritik varsayımlarını sorgula
 $test-and-fix-loop ilgili testleri çalıştır, doğrulanmış hataları düzelt
 $issue-to-pr-workflow 42 numaralı issue'yu uygula ve PR'a hazırla
 ```
@@ -123,11 +136,12 @@ The collection preserves authorization boundaries. A review request reports find
 
 ### What is included
 
-- **Planning and architecture:** product requirements, codebase mapping, architecture decisions, API design, and project bootstrap.
+- **Planning and architecture:** product strategy challenge, product requirements, codebase mapping, architecture decisions, API design, developer-experience review, and project bootstrap.
 - **Implementation and delivery:** implementation/change safety, refactoring, dependency audits, testing, debugging, test-and-fix, code review, repository audit, issue triage, issue-to-PR delivery, git, PR, release, and changelog workflows.
-- **Frontend and mobile:** distinctive frontend design, frontend quality, real-browser testing, accessibility, visual regression, platform/device testing, and mobile release.
-- **Security and operations:** security baselines, threat modeling, migrations, observability, performance investigations, incident response, and postmortems.
-- **AI, MCP, and documentation:** MCP server development, AI evaluations, prompt versioning, model safety, documentation style, and reader-tested technical document coauthoring.
+- **Frontend and mobile:** multi-direction design exploration, distinctive frontend design, frontend quality, real-browser testing, accessibility, visual regression, platform/device testing, and mobile release.
+- **Security and operations:** security baselines, threat modeling, migrations, observability, performance investigations, incident response, postmortems, and post-deploy canary monitoring.
+- **Knowledge and improvement:** evidence-backed project learnings, cross-session context handoffs, and engineering retrospectives.
+- **AI, MCP, and documentation:** MCP server development, AI evaluations with cross-model benchmarking, prompt versioning, model safety, documentation style, and reader-tested technical document coauthoring.
 
 ### Quick install
 
@@ -148,7 +162,7 @@ cd "$HOME/.local/share/egeetas-skills"
 Install a selected subset:
 
 ```bash
-./scripts/install.sh frontend-design webapp-testing test-and-fix-loop
+./scripts/install.sh product-strategy-review developer-experience-review context-handoff
 ```
 
 See [SETUP.md](SETUP.md) for user-level and repository-level installation, updates, verification, and troubleshooting.
@@ -159,6 +173,7 @@ Use `/skills` in Codex CLI or the IDE extension, or mention a skill explicitly:
 
 ```text
 $codebase-mapping map the payment flow and likely change surface
+$product-strategy-review challenge this product idea's demand evidence and critical premises
 $test-and-fix-loop run the relevant checks and fix confirmed failures
 $issue-to-pr-workflow implement issue 42 and prepare the pull request
 ```
@@ -173,10 +188,10 @@ Validate every skill locally:
 python3 scripts/validate_skills.py
 ```
 
-The same validation runs in GitHub Actions on pushes to `main` and on pull requests.
+The same validation runs in GitHub Actions on pushes to `main` and on pull requests. New skills should start from [`templates/SKILL.md.template`](templates/SKILL.md.template). [`tests/skill-boundary-cases.json`](tests/skill-boundary-cases.json) keeps machine-readable routing contracts for easily confused skills; the validator checks their schema and references so a model-level evaluation can consume them without silent drift.
 
 ## License and attribution
 
-Original work in this collection is licensed under [MIT](LICENSE). The Codex-adapted `frontend-design`, `webapp-testing`, and `mcp-builder` skills include work derived from [anthropics/skills](https://github.com/anthropics/skills) under Apache-2.0. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and [LICENSES/Apache-2.0.txt](LICENSES/Apache-2.0.txt).
+Original work in this collection is licensed under [MIT](LICENSE). Some Codex-adapted skills draw from [anthropics/skills](https://github.com/anthropics/skills) under Apache-2.0 and the methodology of [garrytan/gstack](https://github.com/garrytan/gstack) under MIT. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and the license copies in [`LICENSES/`](LICENSES/).
 
 Official Codex skill documentation: <https://developers.openai.com/codex/skills>

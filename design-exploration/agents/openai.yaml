@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Exploration"
+  short_description: "Compare distinct visual directions before building"
+  default_prompt: "Use $design-exploration to generate and compare several distinct directions for this interface."

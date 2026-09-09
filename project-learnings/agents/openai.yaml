@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Learnings"
+  short_description: "Maintain evidence-backed memory for a project"
+  default_prompt: "Use $project-learnings to review and maintain the durable learnings for this project."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Canary Monitoring"
+  short_description: "Detect persistent regressions after deployment"
+  default_prompt: "Use $canary-monitoring to compare this deployment with its baseline and report persistent regressions."

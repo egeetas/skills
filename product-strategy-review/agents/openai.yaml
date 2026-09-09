@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product Strategy Review"
+  short_description: "Challenge demand, premises, scope, and alternatives"
+  default_prompt: "Use $product-strategy-review to test this product idea before we turn it into requirements."

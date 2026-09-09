@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "strategy-before-requirements",
+      "prompt": "I have an idea for a developer tool but I am not sure anyone needs it. Challenge the idea and find the smallest useful wedge.",
+      "expected": ["product-strategy-review"],
+      "excluded": ["product-requirements", "implementation-standards"]
+    },
+    {
+      "id": "accepted-feature-requirements",
+      "prompt": "The feature is approved. Turn these decisions into acceptance criteria and explicit non-goals.",
+      "expected": ["product-requirements"],
+      "excluded": ["product-strategy-review"]
+    },
+    {
+      "id": "live-developer-onboarding",
+      "prompt": "Follow our public SDK quickstart as a new developer, measure time to first successful API call, and report every friction point.",
+      "expected": ["developer-experience-review"],
+      "excluded": ["frontend-quality"]
+    },
+    {
+      "id": "durable-project-memory",
+      "prompt": "Record the verified command and pitfall we discovered so future sessions can find it.",
+      "expected": ["project-learnings"],
+      "excluded": ["context-handoff"]
+    },
+    {
+      "id": "session-resume-checkpoint",
+      "prompt": "Save our current branch state, decisions, failed attempts, test results, and remaining work for another Codex session.",
+      "expected": ["context-handoff"],
+      "excluded": ["project-learnings"]
+    },
+    {
+      "id": "weekly-system-retro",
+      "prompt": "Review the last two weeks of delivery and test evidence, compare it with the prior period, and propose system improvements.",
+      "expected": ["engineering-retrospective"],
+      "excluded": ["postmortem"]
+    },
+    {
+      "id": "incident-root-cause",
+      "prompt": "The outage is stable. Produce a root-cause postmortem from the incident timeline.",
+      "expected": ["postmortem"],
+      "excluded": ["engineering-retrospective"]
+    },
+    {
+      "id": "visual-directions-before-build",
+      "prompt": "Show me four genuinely different dashboard design directions before we choose one to implement.",
+      "expected": ["design-exploration"],
+      "excluded": ["frontend-design"]
+    },
+    {
+      "id": "chosen-interface-build",
+      "prompt": "The visual direction is approved; implement it responsively in the existing frontend.",
+      "expected": ["frontend-design"],
+      "excluded": ["design-exploration"]
+    },
+    {
+      "id": "post-deploy-observation",
+      "prompt": "Monitor the new production version against the pre-deploy screenshots and console baseline for 15 minutes.",
+      "expected": ["canary-monitoring"],
+      "excluded": ["release-checklist"]
+    },
+    {
+      "id": "cross-model-evaluation",
+      "prompt": "Run the same support-agent evaluation across the configured models and compare quality, latency, variance, and cost.",
+      "expected": ["ai-evaluation"],
+      "excluded": ["performance-investigation"]
+    }
+  ]
+}

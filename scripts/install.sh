@@ -136,7 +136,7 @@ done
 
 if [[ "$install_mode" == "copy" ]]; then
   mkdir -p "$destination_root/LICENSES"
-  cp "$repo_root/LICENSES/Apache-2.0.txt" "$destination_root/LICENSES/Apache-2.0.txt"
+  cp -R "$repo_root/LICENSES/." "$destination_root/LICENSES/"
   cp "$repo_root/THIRD_PARTY_NOTICES.md" "$destination_root/THIRD_PARTY_NOTICES.md"
 fi
 

@@ -1,0 +1,20 @@
+---
+name: skill-name
+description: Describe the capability, when it applies, and the nearest important boundary in one discriminating sentence.
+---
+
+# Human-Readable Skill Name
+
+State the outcome this skill should produce and the intent boundary it must preserve. Assume Codex already knows general software-engineering practices; include only guidance that changes decisions or prevents realistic failures.
+
+## Workflow
+
+- Establish scope, evidence, constraints, and the observable completion condition.
+- Use the narrowest reliable tools and preserve repository-specific instructions.
+- Separate verified facts, inferences, and unresolved user decisions.
+- Make external or destructive changes only when the request authorizes them.
+- Verify the result in proportion to risk and report unavailable checks honestly.
+
+## Output
+
+Define the decision, artifact, or evidence the skill must return. Add modes, references, scripts, or examples only when they materially improve repeated use.

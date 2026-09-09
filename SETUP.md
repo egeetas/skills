@@ -20,7 +20,7 @@ Use $skill-installer to install skills from https://github.com/egeetas/skills
 Belirli skill'ler için isimleri isteğe ekleyin:
 
 ```text
-Use $skill-installer to install frontend-design, webapp-testing, and test-and-fix-loop from https://github.com/egeetas/skills
+Use $skill-installer to install product-strategy-review, developer-experience-review, and context-handoff from https://github.com/egeetas/skills
 ```
 
 ### Yöntem 2 — Kişisel kurulum
@@ -42,7 +42,7 @@ Mevcut skill listesini görmek için:
 Yalnızca belirli skill'leri kurmak için:
 
 ```bash
-./scripts/install.sh frontend-design webapp-testing mcp-builder
+./scripts/install.sh product-strategy-review developer-experience-review context-handoff
 ```
 
 Farklı bir kullanıcı skill klasörü seçmek için:
@@ -76,7 +76,7 @@ Repository kapsamı kopyalama kullandığı için güncellemeler otomatik gelmez
 Codex CLI veya IDE extension içinde:
 
 1. `/skills` komutunu çalıştırın veya `$` yazarak skill seçiciyi açın.
-2. Örneğin `$frontend-design` veya `$test-and-fix-loop` çağırın.
+2. Örneğin `$product-strategy-review`, `$context-handoff` veya `$test-and-fix-loop` çağırın.
 3. Yeni skill görünmezse Codex'i yeniden başlatın.
 
 Depo yapısını doğrulamak için:
@@ -118,7 +118,7 @@ Use $skill-installer to install skills from https://github.com/egeetas/skills
 For a subset:
 
 ```text
-Use $skill-installer to install frontend-design, webapp-testing, and test-and-fix-loop from https://github.com/egeetas/skills
+Use $skill-installer to install product-strategy-review, developer-experience-review, and context-handoff from https://github.com/egeetas/skills
 ```
 
 ### Option 2 — User-level installation
@@ -135,7 +135,7 @@ List or install selected skills:
 
 ```bash
 ./scripts/install.sh --list
-./scripts/install.sh frontend-design webapp-testing mcp-builder
+./scripts/install.sh product-strategy-review developer-experience-review context-handoff
 ```
 
 Use a custom user destination:
@@ -167,7 +167,7 @@ Repository scope uses copies so the skills can be committed with the target proj
 ### Verify
 
 1. Run `/skills` in Codex CLI or the IDE extension, or type `$` to open the skill selector.
-2. Invoke a skill such as `$frontend-design` or `$test-and-fix-loop`.
+2. Invoke a skill such as `$product-strategy-review`, `$context-handoff`, or `$test-and-fix-loop`.
 3. Restart Codex if a newly installed skill does not appear.
 
 Validate this repository:
